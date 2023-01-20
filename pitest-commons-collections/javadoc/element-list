@@ -1,0 +1,11 @@
+org.apache.commons.collections4
+org.apache.commons.collections4.bag
+org.apache.commons.collections4.collection
+org.apache.commons.collections4.comparators
+org.apache.commons.collections4.functors
+org.apache.commons.collections4.iterators
+org.apache.commons.collections4.list
+org.apache.commons.collections4.multiset
+org.apache.commons.collections4.queue
+org.apache.commons.collections4.sequence
+org.apache.commons.collections4.set

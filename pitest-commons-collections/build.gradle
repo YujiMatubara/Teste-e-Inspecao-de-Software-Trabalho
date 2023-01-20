@@ -1,0 +1,66 @@
+plugins {
+    id 'java-library'
+    id 'info.solidsoft.pitest' version '1.7.4'
+}
+
+group = 'org.apache.commons'
+version = '4.5-SNAPSHOT'
+
+sourceCompatibility = 11
+targetCompatibility = 11
+
+wrapper {
+    gradleVersion = '7.4.1'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'commons-codec:commons-codec:1.15'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+
+    testImplementation('org.junit.vintage:junit-vintage-engine:5.8.2') {
+        exclude group: 'org.hamcrest', module: 'hamcrest-core'
+    }
+
+    testImplementation 'org.hamcrest:hamcrest:2.2'
+    testImplementation 'org.easymock:easymock:4.3'
+    testImplementation 'org.apache.commons:commons-lang3:3.12.0'
+    testImplementation 'commons-io:commons-io:2.11.0'
+    testImplementation 'org.mockito:mockito-core:3.12.4'
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+test {
+    maxParallelForks = 6
+
+    useJUnitPlatform()
+    filter {
+        excludeTestsMatching '*$*'
+        excludeTestsMatching 'TestUtils'
+        excludeTestsMatching 'Abstract*'
+        excludeTestsMatching 'BulkTest'
+    }
+}
+
+pitest {
+    threads = 6
+
+    targetClasses = [
+        'org.apache.commons.collections4.CollectionUtils*'
+    ]
+    targetTests = [
+        'org.apache.commons.collections4.CollectionUtilsTest'
+    ]
+    pitestVersion = '1.7.5'
+    mutators = [ 'ALL' ]
+    junit5PluginVersion = '0.15'
+
+}

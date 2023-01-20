@@ -1,0 +1,22 @@
+# Maven build files
+target
+*.log
+maven-eclipse.xml
+build.properties
+site-content
+
+# Gradle build files
+.gradle/
+/build/
+
+# IntelliJ IDEA files
+.idea
+.iws
+*.iml
+*.ipr
+
+# Eclipse files
+.settings
+.classpath
+.project
+/bin/
