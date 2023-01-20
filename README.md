@@ -2,8 +2,8 @@
 Ensaio de Proficiência (EP) com uso da ferramenta PIT Mutation Testing (https://pitest.org/) para a biblioteca CollectionUtils realizado junto de amigos da gradução.
 
 ### Sobre
-- SCC0260 - Interação Usuário-computador
-- Professora Kamila Rios da Hora Rodrigues
+- SSC0959 - Teste e Inspeção de Software
+- Professora Simone Senger de Souza
 - ICMC / USP - São Carlos
 
 ### Grupo
